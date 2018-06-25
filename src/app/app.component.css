@@ -1,0 +1,56 @@
+.header{
+  background-color: #D7D8EA;
+}
+
+#column-1 {
+  width: 5%;
+  background-color: #9EA2BB; 
+  float: left;
+  min-height: 100%;
+}
+/*Кнопки додавання користувача та авторизації користувача*/
+.material-icons{
+  cursor: pointer;
+  font-size: 50px;  
+  display: inline-block;
+}
+i.icon-color{
+  color:#03235C;
+}
+/*Модальне вікно*/
+.modal-body{
+  text-align: center;
+  background-color: #ffca18;
+}
+/*Стилі для заголовку */
+.caption{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  background-color: black;
+  margin: auto;   
+}
+/*Стилі для кнопки входу*/
+.login{
+  background-color: black;
+  border: 1px solid black;
+}
+.arrow{
+  color: white;
+  display: inline-block;
+  font-size: 50px;    
+  line-height: 22px;
+  height: 30px;
+  width: 50px;
+  margin: 5px 5px 0px 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.basic-container {
+  display: block;
+} 
+menu{
+  margin: 0px;
+  padding: 0px;
+}

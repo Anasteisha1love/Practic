@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-drawer-container class="example-container" style="height: 100%; min-height: 75vh;">
+  <mat-drawer #drawer mode="side" position="end" style="width: 40%;">
+    <!-- Бокова форма для редагування користавача -->
+<div class="border">
+  <div class="mb-2">
+    <!-- Кнопка закриття -->
+    <i class="material-icons p-2" (click)="drawer.toggle()" style="float: right;">clear</i>
+    <update_user>loading update</update_user>
+  </div>
+   <!-- Виклик форми для редагування користувача -->
+</div>
+  </mat-drawer>
+  
+  <mat-drawer-content  hasBackdrop=False>
+<!--Таблиця-->
+  <!--Зміст таблиці -->
+  <div class="container pt-2">
+    <div class="table-responsive">
+      <table class="table table-hover" matSort (matSortChange)="sortData($event)">
+        <thead>
+          <tr>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="domain">Domain</th>
+            <th mat-sort-header="last">Last signed in</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of sortedData">
+            <!--Фотографія користувача-->
+            <td>
+              <img src="#" class="rounded-circle img-fluid fotoUsers mr-3">{{user.name}}
+            </td>
+            <td>{{user.domain}}</td>
+            <td>{{user.last}}</td>
+            <td>
+              <!--Контекстне меню для таблиці-->
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Reset password</button>
+                <button mat-menu-item (click)="drawer.toggle()">Update user</button>
+                <button mat-menu-item>Delete user</button>
+                <button mat-menu-item>Suspend user</button>
+              </mat-menu>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+

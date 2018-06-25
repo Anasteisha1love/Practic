@@ -1,0 +1,50 @@
+<!--Бокова лінія-->
+<div class="pl-2" id="column-1"></div>
+
+<!--Кнопки додавання та авторизаціїї-->
+<div class="container-fluid">
+    <div class="header">
+        <div class="row justify-content-around">
+            <div class="col-6">
+                <div>
+                    <a href="#" alt="addUsers"><i class="material-icons icon-color">add_circle</i></a>
+                </div>
+            </div>
+            <div class=" col-6 text-right">
+                <i data-toggle="modal" data-target="#myModal" class="material-icons icon-color">account_circle</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Модальне вікно Авторизації-->
+<div id="myModal" class="modal fade">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <form class="form-auto">
+                <img src="img/Logoo.png" alt="logo" class="mb-4 mt-4 center-block">
+                <!--Основна частина модального вікна-->
+                <h1 class="caption p-3">Login</h1>
+                <!--Поля для вводу-->
+                <div class="input-group">
+                    <input type="username" id="inputUsername" class="form-control" placeholder="Enter username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="inputpassword" class="form-control" placeholder="Enter password">
+                </div>
+                <!--Кнопка для входу-->
+                <button class="login center-block mt-5" type="button" data-dismiss="modal">
+                    <span class="arrow">&#10139;</span>
+                </button>
+                    <p class="mt-5">Forgotten access details?</p>
+             </form>
+         </div>
+    </div>
+</div>
+</div>
+
+<!-- Меню -->
+<div class="basic-container">
+    <menu>loading SelectList </menu>
+</div>

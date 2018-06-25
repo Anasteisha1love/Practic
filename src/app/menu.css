@@ -1,0 +1,15 @@
+ .mat-form-field{
+  display: inline-block;
+  margin: 10px 0px 0px 10px;
+  font-size: 15px;
+ }
+h1{
+  font-family: 'Times New Roman', Times, serif; 
+  font-style: italic; 
+  margin: 0px;
+}
+nav{
+  border-bottom: 1px solid black; 
+  padding: 0px;
+  margin: 0px;
+}

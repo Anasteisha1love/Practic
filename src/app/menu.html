@@ -1,0 +1,40 @@
+<!--Меню(Заголовок+3Випадаючих списки для вибору)-->
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <h1 class=" users pl-5">Users</h1>
+        <!--Згорнути випадаючі списки меню на маленькому екрані-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!--Випадаючі списки меню-->
+<div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+    <ul class="navbar-nav pr-5">
+        <li class="nav-item dropdown">
+            <!--All roles-->
+            <mat-form-field>
+                <mat-select placeholder="All Roles">
+                    <mat-option *ngFor="let role of role" [value]="role.value"> {{role.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!--All Domains-->
+            <mat-form-field>
+                <mat-select placeholder="All Domains">
+                    <mat-option *ngFor="let domain of domain" [value]="domain.value">
+                        {{ domain.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!--Active User-->
+            <mat-form-field>
+                <mat-select placeholder="Active User">
+                    <mat-option *ngFor="let activeUser of activeUser" [value]="activeUser.value">
+                        {{ activeUser.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+    </ul>
+</div>
+</nav>
+</div>

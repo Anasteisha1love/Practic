@@ -1,0 +1,22 @@
+.border{
+  background-color: #EDEEEF;
+  border-left: 1px solid black;
+  height: 100%;
+}
+thead{
+  background-color:#A86B7D;
+  color: white;
+}
+tbody{
+  background-color:#FECBC8;
+}
+mat-sidenav-container{
+  background-color: white;
+}
+
+/*Стилі для іконок*/
+.material-icons{
+  cursor: pointer;
+  font-size: 30px;  
+  display: inline-block;
+}
