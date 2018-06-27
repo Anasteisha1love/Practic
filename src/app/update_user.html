@@ -10,7 +10,7 @@
         </div>
     </div>
     <!--Форма-->
-    <form class="needs-validation">
+    <form class="needs-validation" action="/api/" method="PUT">
         <!--Поля з вибором-->
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -50,19 +50,20 @@
                 </div>
             </div>
         </div>
-    </form>
-    <!--Текст-->
+         <!--Текст-->
     <div class="text-right mb-3">
-        <a class="password " href="#">Auto-generate password</a>
-    </div>
-    <!--Checkbox-->
-    <div class="pb-3">
-        <input class="checkbox" type="checkbox" id="check" name="check" />
-        <label for="check">Require a change of password in the next sing in</label>
-    </div>
-    <!--Кнопки-->
-    <div class="text-right pt-5">
-        <button type="button" class="btn btn-link" disabled aria-disabled="true">CANCEL</button>
-        <button type="button" class="btn btn-link">UPDATE USER</button>
-    </div>
+            <a class="password " href="#">Auto-generate password</a>
+        </div>
+        <!--Checkbox-->
+        <div class="pb-3">
+            <input class="checkbox" type="checkbox" id="check" name="check" />
+            <label for="check">Require a change of password in the next sing in</label>
+        </div>
+        <!--Кнопки-->
+        <div class="text-right pt-5">
+            <button type="button" class="btn btn-link" disabled aria-disabled="true">CANCEL</button>
+            <button type="submit" class="btn btn-link">UPDATE USER</button>
+        </div>
+    </form>
+   
 </div>

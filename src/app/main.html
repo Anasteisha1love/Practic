@@ -1,5 +1,4 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <mat-drawer-container class="example-container" style="height: 100%; min-height: 75vh;">
   <mat-drawer #drawer mode="side" position="end" style="width: 40%;">
     <!-- Бокова форма для редагування користавача -->
@@ -14,6 +13,7 @@
   </mat-drawer>
   
   <mat-drawer-content  hasBackdrop=False>
+            
 <!--Таблиця-->
   <!--Зміст таблиці -->
   <div class="container pt-2">
@@ -28,13 +28,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of sortedData">
+          <tr *ngFor="let usr of (sortedData | async)">
             <!--Фотографія користувача-->
             <td>
-              <img src="#" class="rounded-circle img-fluid fotoUsers mr-3">{{user.name}}
+              <img src="#" class="rounded-circle img-fluid fotoUsers mr-3">
+              {{usr?.first_name}} {{usr.last_name}}
             </td>
-            <td>{{user.domain}}</td>
-            <td>{{user.last}}</td>
+            <td><pre>{{usr.domain}}</pre></td>
+            <td>{{usr.last}}</td>
+
             <td>
               <!--Контекстне меню для таблиці-->
               <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -55,4 +57,3 @@
 
   </mat-drawer-content>
 </mat-drawer-container>
-

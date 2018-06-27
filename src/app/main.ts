@@ -1,28 +1,31 @@
 import { Component } from '@angular/core';
 import {Sort} from '@angular/material';
+
+import {HttpClient} from '@angular/common/http';
+import { Observable, Subject, ReplaySubject, from, of, range } from 'rxjs';
+import { map, filter, switchMap } from 'rxjs/operators';
+import {Injectable} from '@angular/core'
+// import {IEmployee} from './IEmploee'
+
 @Component({
   selector: 'main',
   templateUrl: './main.html',
   styleUrls: [ './main.css' ]
 })
-export class MainComponent  {
-  // opened: boolean;
-  // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
-  
-  user = [
-    { name: 'Edith Pittman',  domain: 'Nexus Optimus', last: 'Never logged in' },
-    { name: 'Mu`izz Rahal',   domain: 'Infuse Epic V', last: '7:17 PM GMT+1' },
-    { name: 'Zhen Ch`in',     domain: 'Galaxy Plus',   last: 'Jan 13' },
-    { name: 'Fethawit Elias', domain: 'Galaxy Plus',   last: 'Dec 30, 2014' },
-    { name: 'Kerman Poirer',  domain: 'Nexus Optimus', last: '7:17 PM GMT+1' },
-  ];
 
+@Injectable()
+export class MainComponent  {
+  user;
   sortedData;
 
-  constructor() {
-    this.sortedData = this.user.slice();
+  
+  getUsers(){
+    this.user = this.http.get('/api'), map((res: Response) => res.json());
+    this.sortedData = (this.user);
   }
-
+  constructor(private http: HttpClient) {
+    this.getUsers();
+  }
   sortData(sort: Sort) {
     const data = this.user.slice();
     if (!sort.active || sort.direction == '') {
@@ -33,8 +36,8 @@ export class MainComponent  {
     this.sortedData = data.sort((a, b) => {
       let isAsc = sort.direction == 'asc';
       switch (sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'domain': return compare(+a.domain, +b.domain, isAsc);
+        case 'name': return compare(a.first_name, b.first_name, isAsc);
+        case 'domain': return compare(a.domain, b.domain, isAsc);
         case 'last': return compare(+a.last, +b.last, isAsc);
         default: return 0;
       }
